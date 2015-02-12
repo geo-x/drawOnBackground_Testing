@@ -11,6 +11,8 @@
 		5E8A52971A8C0848001D5164 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E8A52961A8C0848001D5164 /* Images.xcassets */; };
 		5E8A529A1A8C0848001D5164 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E8A52981A8C0848001D5164 /* MainMenu.xib */; };
 		5E8A52A61A8C0848001D5164 /* drawOnBackground_TestingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A52A51A8C0848001D5164 /* drawOnBackground_TestingTests.swift */; };
+		5E8A52B01A8C0A2A001D5164 /* geo graph paper 414x417.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E8A52AF1A8C0A2A001D5164 /* geo graph paper 414x417.png */; };
+		5E8A52B21A8C1CB3001D5164 /* SineWaveClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A52B11A8C1CB3001D5164 /* SineWaveClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +34,8 @@
 		5E8A529F1A8C0848001D5164 /* drawOnBackground_TestingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = drawOnBackground_TestingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E8A52A41A8C0848001D5164 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E8A52A51A8C0848001D5164 /* drawOnBackground_TestingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drawOnBackground_TestingTests.swift; sourceTree = "<group>"; };
+		5E8A52AF1A8C0A2A001D5164 /* geo graph paper 414x417.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "geo graph paper 414x417.png"; sourceTree = "<group>"; };
+		5E8A52B11A8C1CB3001D5164 /* SineWaveClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SineWaveClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				5E8A52941A8C0848001D5164 /* AppDelegate.swift */,
+				5E8A52B11A8C1CB3001D5164 /* SineWaveClass.swift */,
 				5E8A52961A8C0848001D5164 /* Images.xcassets */,
 				5E8A52981A8C0848001D5164 /* MainMenu.xib */,
 				5E8A52921A8C0848001D5164 /* Supporting Files */,
@@ -84,6 +89,7 @@
 		5E8A52921A8C0848001D5164 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5E8A52AF1A8C0A2A001D5164 /* geo graph paper 414x417.png */,
 				5E8A52931A8C0848001D5164 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -186,6 +192,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E8A52B01A8C0A2A001D5164 /* geo graph paper 414x417.png in Resources */,
 				5E8A52971A8C0848001D5164 /* Images.xcassets in Resources */,
 				5E8A529A1A8C0848001D5164 /* MainMenu.xib in Resources */,
 			);
@@ -205,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E8A52B21A8C1CB3001D5164 /* SineWaveClass.swift in Sources */,
 				5E8A52951A8C0848001D5164 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
