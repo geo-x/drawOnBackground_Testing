@@ -65,13 +65,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         DrawingView.lockFocus()
         var path = NSBezierPath()
         path.lineWidth = 1.0
-        path.moveToPoint( NSPoint(x:0,y:0))
-        for i in 0...30{
+        path.moveToPoint( NSPoint(x:0,y:140))
+        
+        for i in 0...360{
+         
             
-         path.lineToPoint( NSPoint(x:i,y:100))
-      
+            println( "the array value for \(i) degrees is \( (sineWave1.wavRawValueArray[i])*200) and the int value is \(Int(sineWave1.wavRawValueArray[i]*200)) ")
+            
+         path.lineToPoint( NSPoint(x:i, y: Int(sineWave1.wavRawValueArray[i]*100) + 140))
+             path.stroke()
         }
-        path.stroke()
+       
         
 
         

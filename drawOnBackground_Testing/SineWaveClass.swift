@@ -28,8 +28,8 @@ class SineWave{
     
     init(){
         wavAmplitude = 1
-        wavFrequency = 1000
-        wavPhase = 30
+        wavFrequency = 3000
+        wavPhase = 0
         
         for i in 0...360 {
             self.phaseAdjustedValueArray.append(0)
