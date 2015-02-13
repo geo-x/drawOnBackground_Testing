@@ -67,12 +67,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         path.lineWidth = 1.0
         path.moveToPoint( NSPoint(x:0,y:140))
         
+        var j:Float = 0.0
         for i in 0...360{
          
             
             println( "the array value for \(i) degrees is \( (sineWave1.wavRawValueArray[i])*200) and the int value is \(Int(sineWave1.wavRawValueArray[i]*200)) ")
             
-         path.lineToPoint( NSPoint(x:i, y: Int(sineWave1.wavRawValueArray[i]*100) + 140))
+            j = Float(i)
+            j = j * 0.5
+            
+         path.lineToPoint( NSPoint(x:(Double(i ) * 0.3) , y: Double(sineWave1.wavRawValueArray[i] * Double(200)) + Double(140)))
+            
+         //path.lineToPoint( NSPoint(x: i/2, y: Int(sineWave1.wavRawValueArray[i]*100) + 140))
+            
+       
              path.stroke()
         }
        
