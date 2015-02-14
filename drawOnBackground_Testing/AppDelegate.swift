@@ -62,69 +62,45 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //        path.lineToPoint(( NSPoint(x:200,y:200)))
 //        path.stroke()
         
-        DrawingView.lockFocus()
+       
+        
+        
+        
         var path = NSBezierPath()
-        path.lineWidth = 0.2
-        
-        
         var somePoint:NSPoint = NSPoint(x:1, y:1)
         
-        var startPoint:NSPoint =  NSPoint(x:(Double(0 ) * 0.1) , y: Double(sineWave1.wavRawValueArray[0] * Double(100)) + Double(140))
+        path.lineWidth = 0.1
         
-        var nextRequiredXValue:Int = 1
-        var currentXValue:Int = 0
+        var startPoint:NSPoint =  NSPoint(x:(Double(0 ) * 0.15) , y: Double(sineWave1.phaseAdjustedValueArray[0] * Double(100)) + Double(140))
         
+      
         
-        //initialize start and end points
+        //initialize start point
         
-        path.moveToPoint(NSPoint(x:100 ,y:0))
-        path.lineToPoint(NSPoint(x:102 ,y:300))
-        
-        path.moveToPoint(NSPoint(x:200.5 ,y:0.5))
-        path.lineToPoint(NSPoint(x:202.5 ,y:300.5))
-        
-        
-        
+        DrawingView.lockFocus()
         path.moveToPoint( startPoint)
-
         
         
         
-        for i in 1...360{
+        for i in 0...360{
             
-            println("index is \(i) curent X value is \(currentXValue) and the next required x Value is \(nextRequiredXValue)")
             
-
-            if currentXValue >= nextRequiredXValue{
-            
+               path.lineToPoint( NSPoint(x:(Double(i ) * 0.15 ) , y: Double(sineWave1.phaseAdjustedValueArray[i] * Double(100)) + Double(140)))
                 
-                println(" in loop current x equals \(currentXValue)  and the point here is \( NSPoint(x:Int((Double(i ) * 0.1 )) , y: Int(Double(sineWave1.wavRawValueArray[i] * Double(100)) + Double(140))))")
-                nextRequiredXValue = nextRequiredXValue + 1
-                
-                //path.lineToPoint( NSPoint(x:(Double(i ) * 0.1 ) , y: Double(sineWave1.wavRawValueArray[i] * Double(100)) + Double(140)))
-                
-                 path.lineToPoint( NSPoint(x:Int((Double(i ) * 0.5 )) , y: Int(Double(sineWave1.wavRawValueArray[i] * Double(100)) + Double(140))))
+                 //path.lineToPoint( NSPoint(x:Int((Double(i ) * 0.5 )) , y: Int(Double(sineWave1.wavRawValueArray[i] * Double(100)) + Double(140))))
                 
 
                 
                 path.stroke()
-                
-            }
-            
-            
-            currentXValue = Int((Double(i ) * 0.5))
-            
-            //DrawingView.unlockFocus()
-            
-           
-        }
+        
+        } // end for
        
         
-
-        
-        
-        
-    }
+//DrawingView.unlockFocus()
+  
+     
+    } // end main loop
+    
 
     
     
