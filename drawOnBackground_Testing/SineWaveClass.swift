@@ -128,62 +128,46 @@ class WaveView1: NSView {
         super.drawRect(dirtyRect)
 
         
-                var path = NSBezierPath()
-                //DrawingWav1.lockFocus()
-        
-                var somePoint:NSPoint = NSPoint(x:1, y:1)
-                path.lineWidth = 5
-                path.moveToPoint(somePoint)
-                path.lineToPoint ( NSPoint( x:300, y:300))
-                path.stroke()
-        
- 
+     
+
         println("how many times?")
         
 //**************************************************************************
-//         println(" here first")
-//        sineWave1.calculateRawValues()
-//            println("got phase adjusted values \(sineWave1.phaseAdjustedValueArray)")
-//        
-//        
-//           var path = NSBezierPath()
-//            var somePoint:NSPoint = NSPoint(x:1, y:1)
-//        
-//            path.lineWidth = 1
-//        
-//            //var startPoint:NSPoint =  NSPoint(x:(Double(0 ) * 0.15) , y: Double(sineWave1.phaseAdjustedValueArray[0] * Double(100)) + Double(140))
-//        
-//        
-//        
-//        
-//        
-//            //initialize start point
-//        
-//        
-//            path.moveToPoint( somePoint)
-//            path.lineToPoint ( NSPoint( x:300, y:300))
-//        path.stroke()
-//        
+
+        sineWave1.calculateRawValues()
+        
+           var path = NSBezierPath()
+
+       
+          path.lineWidth = 1
+       
+          var startPoint:NSPoint =  NSPoint(x:(Double(0 ) * 0.15) , y: Double(sineWave1.phaseAdjustedValueArray[0] * Double(100)) + Double(140))
         
         
-//**************************************************************************
-//
-//
-//        
-//            for i in 0...360{
-//        
-//        
-//                path.lineToPoint( NSPoint(x:(Double(i ) * 0.15 ) , y: Double(sineWave1.phaseAdjustedValueArray[i] * Double(100)) + Double(140)))
-//        
-//                //path.lineToPoint( NSPoint(x:Int((Double(i ) * 0.5 )) , y: Int(Double(sineWave1.wavRawValueArray[i] * Double(100)) + Double(140))))
-//                                
-//                
-//                                
-//                        path.stroke()
-//
-//                          } // end for
+      
+// *** initialize start point
+        
+            path.moveToPoint( startPoint )
+        
+// *** draw points in array
+        
+            for i in 0...360{
+        
+                path.lineToPoint( NSPoint(x:(Double(i ) * 0.15 ) , y: Double(sineWave1.phaseAdjustedValueArray[i] * Double(100)) + Double(140)))
+                
+                
+                path.stroke()
+        
+                //path.lineToPoint( NSPoint(x:Int((Double(i ) * 0.5 )) , y: Int(Double(sineWave1.wavRawValueArray[i] * Double(100)) + Double(140))))
+                                
+                
+                                
+                
+
+                          } // end for
                 
     } //end drawrect
+    
 }//end class
 
 
