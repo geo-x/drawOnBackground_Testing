@@ -17,6 +17,8 @@
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
+        <customObject id="lX8-ns-p8N" customClass="SineViewController" customModule="drawOnBackground_Testing" customModuleProvider="target"/>
+        <customObject id="yXW-9u-hEi"/>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
             <items>
@@ -692,16 +694,6 @@
                                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C2o-5R-Xi9">
                                     <rect key="frame" x="186" y="96" width="201" height="21"/>
                                     <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="100" maxValue="12000" doubleValue="1000" tickMarkPosition="above" sliderType="linear" id="gWW-pA-SU6"/>
-                                    <connections>
-                                        <action selector="takeIntegerValueFrom:" target="OHq-k2-NVY" id="9bb-Xt-o3G"/>
-                                    </connections>
-                                </slider>
-                                <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5d1-al-rRl">
-                                    <rect key="frame" x="186" y="65" width="201" height="21"/>
-                                    <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" doubleValue="0.5" tickMarkPosition="above" sliderType="linear" id="5Fc-dS-oSB"/>
-                                    <connections>
-                                        <action selector="takeFloatValueFrom:" target="KrV-Uc-sTC" id="h6f-pl-FYc"/>
-                                    </connections>
                                 </slider>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gbG-pF-JhW">
                                     <rect key="frame" x="137" y="98" width="38" height="17"/>
@@ -835,6 +827,13 @@
                                         <action selector="takeDoubleValueFrom:" target="C2o-5R-Xi9" id="Ila-gb-fCB"/>
                                     </connections>
                                 </textField>
+                                <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5d1-al-rRl">
+                                    <rect key="frame" x="189" y="65" width="201" height="21"/>
+                                    <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" doubleValue="0.5" tickMarkPosition="above" sliderType="linear" id="5Fc-dS-oSB"/>
+                                    <connections>
+                                        <action selector="takeFloatValueFrom:" target="KrV-Uc-sTC" id="h6f-pl-FYc"/>
+                                    </connections>
+                                </slider>
                             </subviews>
                         </view>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>

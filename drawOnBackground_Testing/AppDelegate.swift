@@ -13,6 +13,20 @@ import Cocoa
 let pi = M_PI
 
 
+
+//*********************************
+// Global Scope Objects
+//*********************************
+
+public var sineWave1 = SineWave()
+
+
+//**********************************
+//**********************************
+
+
+
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
@@ -31,6 +45,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         // Insert code here to initialize your application
         
+        
+        sineWave1.calculateRawValues()
         
 //        DrawingWav1.lockFocus()
 //        var path = NSBezierPath()

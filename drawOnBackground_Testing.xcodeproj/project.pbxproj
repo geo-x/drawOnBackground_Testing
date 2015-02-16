@@ -37,7 +37,7 @@
 		5E8A52A41A8C0848001D5164 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E8A52A51A8C0848001D5164 /* drawOnBackground_TestingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drawOnBackground_TestingTests.swift; sourceTree = "<group>"; };
 		5E8A52AF1A8C0A2A001D5164 /* geo graph paper 414x417.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "geo graph paper 414x417.png"; sourceTree = "<group>"; };
-		5E8A52B11A8C1CB3001D5164 /* SineWaveClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SineWaveClass.swift; sourceTree = "<group>"; };
+		5E8A52B11A8C1CB3001D5164 /* SineWaveClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SineWaveClass.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.simpleColoring; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

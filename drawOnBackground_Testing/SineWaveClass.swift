@@ -14,11 +14,11 @@ public class SineWave{
     //Properties **************************
     
     var wavAmplitude:Double
-    var wavFrequency:Double
+    public var wavFrequency:Double
     var wavPhase:Int
     
     var wavRawValueArray = [Double]()
-    var phaseAdjustedValueArray = [Double]()
+    public var phaseAdjustedValueArray = [Double]()
     
     
    
@@ -29,7 +29,7 @@ public class SineWave{
     init(){
         wavAmplitude = 0.5
         wavFrequency = 3000
-        wavPhase = 180
+        wavPhase = 90
         
         for i in 0...360 {
             self.phaseAdjustedValueArray.append(0)
@@ -108,13 +108,9 @@ public func calculateRawValues ()  {
 class WaveView1: NSView {
     
    
-    
-    var sineWave1 = SineWave()
+
    
-//    var sineWave2 = SineWave()
-//    var sineWave3 = SineWave()
-    
-    
+     
  
     
     func testFunction(){
@@ -134,7 +130,7 @@ class WaveView1: NSView {
         
 //**************************************************************************
 
-        sineWave1.calculateRawValues()
+        
         
            var path = NSBezierPath()
 
