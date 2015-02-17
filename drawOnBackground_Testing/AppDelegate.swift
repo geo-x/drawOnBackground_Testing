@@ -35,19 +35,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var DrawingWav1: WaveView1!
     
-    // textFields ******************
+    //*************************************
+    // textField Outlets ******************
     
-    @IBOutlet weak var phaseText: NSTextField!
+ 
+    @IBOutlet weak var phase1Text: NSTextField!
+    
+    
+    //**********************************
+    //**********************************
+    
+    
+    
     
     // slider actions **************
-    
-
-    
     
     @IBAction func phase1Slider(sender: NSSlider) {
         
         sineWave1.wavPhase = Int(sender.doubleValue)
         sineWave1.calculateRawValues()
+        phase1Text.integerValue = Int(sender.doubleValue)
         DrawingWav1.needsDisplay = true
     }
     
