@@ -17,6 +17,8 @@ public class SineWave{
     public var wavFrequency:Double
     var wavPhase:Int
     
+    // create empty arrays using initializer syntax
+    
     var wavRawValueArray = [Double]()
     public var phaseAdjustedValueArray = [Double]()
     
@@ -31,8 +33,10 @@ public class SineWave{
         wavFrequency = 3000
         wavPhase = 90
         
+        // load wavRawValue array with dummy values
         for i in 0...360 {
-            self.phaseAdjustedValueArray.append(0)
+            self.wavRawValueArray.append(0.0)
+            self.phaseAdjustedValueArray.append(0.0)
         }
         
         
@@ -50,10 +54,12 @@ public func calculateRawValues ()  {
             instantaneousAmpValue = Double(sin(degreeCount * pi / 180))
             instantaneousAmpValue = instantaneousAmpValue * self.wavAmplitude
             
-            self.wavRawValueArray.append(instantaneousAmpValue)
+            self.wavRawValueArray[i] = instantaneousAmpValue
             
             }
-       self.adjustValuesForPhase()
+        
+        println("  here's the raw value array ( self.wavRawValueArray)")
+      self.adjustValuesForPhase()
     }
     
 //******************************
@@ -161,9 +167,9 @@ class WaveView1: NSView {
                 
 
                           } // end for
-                
+            
     } //end drawrect
     
-}//end class
+} //end class
 
 

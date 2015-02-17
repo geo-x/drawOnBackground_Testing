@@ -30,14 +30,25 @@ public var sineWave1 = SineWave()
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    @IBOutlet weak var window: NSWindow!
-
-
-    //@IBOutlet weak var DrawingView: NSView!
     
+    
+    @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var DrawingWav1: WaveView1!
+    
+    
+    
+    // slider actions **************
+    
+//    @IBAction func phase1Slider(sender: NSSlider) {
+//        sineWave1.wavPhase = Int(sender.doubleValue)
+//       sineWave1.calculateRawValues()
+//       DrawingWav1.needsDisplay = true
+//        
+//    }
+    
+    
  
-     var resultantValueArray = [Double]()
+     //var resultantValueArray = [Double]()
    
     
     
@@ -47,6 +58,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         
         sineWave1.calculateRawValues()
+       
+        println(" just set phase 1 to 0 and it's \(sineWave1.wavPhase)")
         
 //        DrawingWav1.lockFocus()
 //        var path = NSBezierPath()
@@ -63,7 +76,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         DrawingWav1.testFunction()
         
-    DrawingWav1.needsDisplay = true
+   DrawingWav1.needsDisplay = true
         
         
      
