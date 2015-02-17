@@ -35,16 +35,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var DrawingWav1: WaveView1!
     
+    // textFields ******************
     
+    @IBOutlet weak var phaseText: NSTextField!
     
     // slider actions **************
     
-//    @IBAction func phase1Slider(sender: NSSlider) {
-//        sineWave1.wavPhase = Int(sender.doubleValue)
-//       sineWave1.calculateRawValues()
-//       DrawingWav1.needsDisplay = true
-//        
-//    }
+
+    
+    
+    @IBAction func phase1Slider(sender: NSSlider) {
+        
+        sineWave1.wavPhase = Int(sender.doubleValue)
+        sineWave1.calculateRawValues()
+        DrawingWav1.needsDisplay = true
+    }
     
     
  
@@ -61,14 +66,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
        
         println(" just set phase 1 to 0 and it's \(sineWave1.wavPhase)")
         
-//        DrawingWav1.lockFocus()
-//        var path = NSBezierPath()
-//        var somePoint:NSPoint = NSPoint(x:1, y:1)
-//        path.lineWidth = 1
-//        path.moveToPoint(somePoint)
-//        path.lineToPoint ( NSPoint( x:300, y:300))
-//        path.stroke()
-        
+
         
         
         

@@ -31,7 +31,7 @@ public class SineWave{
     init(){
         wavAmplitude = 0.5
         wavFrequency = 3000
-        wavPhase = 90
+        wavPhase = 0
         
         // load wavRawValue array with dummy values
         for i in 0...360 {

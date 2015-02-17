@@ -14,6 +14,8 @@
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="drawOnBackground_Testing" customModuleProvider="target">
             <connections>
                 <outlet property="DrawingWav1" destination="ELS-ZP-Hhr" id="juV-Vy-RdT"/>
+                <outlet property="phaseSliderOut" destination="VtA-Jk-XGn" id="NmH-FC-5Ll"/>
+                <outlet property="phaseText" destination="4cp-J0-ulf" id="y9S-g4-5Jd"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -708,9 +710,9 @@
                                 </textField>
                                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VtA-Jk-XGn">
                                     <rect key="frame" x="189" y="30" width="201" height="21"/>
-                                    <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="360" tickMarkPosition="above" sliderType="linear" id="bjT-Em-yX5"/>
+                                    <sliderCell key="cell" continuous="YES" alignment="left" maxValue="359" tickMarkPosition="above" sliderType="linear" id="bjT-Em-yX5"/>
                                     <connections>
-                                        <action selector="takeIntegerValueFrom:" target="4cp-J0-ulf" id="s5N-NQ-CAM"/>
+                                        <action selector="phase1Slider:" target="Voe-Tx-rLC" id="1wf-CS-B5z"/>
                                     </connections>
                                 </slider>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kRd-ai-OGV">
@@ -779,7 +781,7 @@
                                 </textField>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WSu-Ld-Zw1">
                                     <rect key="frame" x="373" y="44" width="38" height="17"/>
-                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="360" id="ole-ZP-L80">
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="359" id="ole-ZP-L80">
                                         <font key="font" metaFont="system" size="10"/>
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -792,32 +794,6 @@
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
-                                </textField>
-                                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4cp-J0-ulf">
-                                    <rect key="frame" x="82" y="31" width="42" height="18"/>
-                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" continuous="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" title="0" drawsBackground="YES" id="3dz-WL-DBR">
-                                        <font key="font" metaFont="system" size="10"/>
-                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                    </textFieldCell>
-                                    <connections>
-                                        <action selector="takeIntegerValueFrom:" target="VtA-Jk-XGn" id="sdC-Ci-H0q"/>
-                                    </connections>
-                                </textField>
-                                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KrV-Uc-sTC">
-                                    <rect key="frame" x="84" y="66" width="42" height="18"/>
-                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" continuous="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" title="0.5" drawsBackground="YES" id="adM-Ri-c28">
-                                        <numberFormatter key="formatter" formatterBehavior="default10_4" localizesFormat="NO" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="fpv-zT-Fsl">
-                                            <real key="minimum" value="0.0"/>
-                                            <real key="maximum" value="1"/>
-                                        </numberFormatter>
-                                        <font key="font" metaFont="system" size="10"/>
-                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                    </textFieldCell>
-                                    <connections>
-                                        <action selector="takeDoubleValueFrom:" target="5d1-al-rRl" id="d3u-is-UGb"/>
-                                    </connections>
                                 </textField>
                                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OHq-k2-NVY">
                                     <rect key="frame" x="84" y="97" width="42" height="18"/>
@@ -837,6 +813,29 @@
                                         <action selector="takeFloatValueFrom:" target="KrV-Uc-sTC" id="h6f-pl-FYc"/>
                                     </connections>
                                 </slider>
+                                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4cp-J0-ulf">
+                                    <rect key="frame" x="82" y="31" width="42" height="18"/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" continuous="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" title="0" drawsBackground="YES" id="3dz-WL-DBR">
+                                        <font key="font" metaFont="system" size="10"/>
+                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KrV-Uc-sTC">
+                                    <rect key="frame" x="84" y="66" width="42" height="18"/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" continuous="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" title="0.5" drawsBackground="YES" id="adM-Ri-c28">
+                                        <numberFormatter key="formatter" formatterBehavior="default10_4" localizesFormat="NO" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="fpv-zT-Fsl">
+                                            <real key="minimum" value="0.0"/>
+                                            <real key="maximum" value="1"/>
+                                        </numberFormatter>
+                                        <font key="font" metaFont="system" size="10"/>
+                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                    <connections>
+                                        <action selector="takeDoubleValueFrom:" target="5d1-al-rRl" id="d3u-is-UGb"/>
+                                    </connections>
+                                </textField>
                             </subviews>
                         </view>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
@@ -846,6 +845,7 @@
             </view>
             <point key="canvasLocation" x="334.5" y="526.5"/>
         </window>
+        <userDefaultsController representsSharedInstance="YES" id="w8M-bz-UlN"/>
     </objects>
     <resources>
         <image name="geo graph paper 414x417" width="414" height="417"/>
