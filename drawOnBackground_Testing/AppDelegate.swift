@@ -35,19 +35,32 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var DrawingWav1: WaveView1!
     
+   
+    //***********************************
+    // textField Actions ****************
+    
+    
+    @IBAction func Phase1TextSet(sender: NSTextField) {
+        
+        println("phase set from text")
+        sineWave1.wavPhase = Int(sender.doubleValue)
+        phase1Out.doubleValue = sender.doubleValue
+         sineWave1.calculateRawValues()
+        DrawingWav1.needsDisplay = true
+
+    }
+    
+    
     //*************************************
     // textField Outlets ******************
     
- 
+    
     @IBOutlet weak var phase1Text: NSTextField!
     
-    
-    //**********************************
-    //**********************************
-    
-    
-    
-    
+   //******* Actions and Outlets  *******
+    //***********************************
+    //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    //***********************************
     // slider actions **************
     
     @IBAction func phase1Slider(sender: NSSlider) {
@@ -57,10 +70,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         phase1Text.integerValue = Int(sender.doubleValue)
         DrawingWav1.needsDisplay = true
     }
+   
+    
+    //***********************************
+    // slider Outlets **************
+
+    
+    @IBOutlet weak var phase1Out: NSSlider!
     
     
+    
+    //***********************************
+    //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    //***********************************
  
-     //var resultantValueArray = [Double]()
+  
    
     
     

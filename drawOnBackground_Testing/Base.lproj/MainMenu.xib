@@ -14,6 +14,7 @@
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="drawOnBackground_Testing" customModuleProvider="target">
             <connections>
                 <outlet property="DrawingWav1" destination="ELS-ZP-Hhr" id="juV-Vy-RdT"/>
+                <outlet property="phase1Out" destination="VtA-Jk-XGn" id="yqz-CS-8i7"/>
                 <outlet property="phase1Text" destination="4cp-J0-ulf" id="Ibq-RP-eHR"/>
                 <outlet property="phaseSliderOut" destination="VtA-Jk-XGn" id="NmH-FC-5Ll"/>
                 <outlet property="phaseText" destination="4cp-J0-ulf" id="y9S-g4-5Jd"/>
@@ -821,6 +822,9 @@
                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
+                                    <connections>
+                                        <action selector="Phase1TextSet:" target="Voe-Tx-rLC" id="88j-t6-M0B"/>
+                                    </connections>
                                 </textField>
                                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KrV-Uc-sTC">
                                     <rect key="frame" x="84" y="66" width="42" height="18"/>
