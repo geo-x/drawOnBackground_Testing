@@ -16,6 +16,8 @@
                 <outlet property="DrawingWav1" destination="ELS-ZP-Hhr" id="juV-Vy-RdT"/>
                 <outlet property="amp1Out" destination="5d1-al-rRl" id="55O-5q-MA6"/>
                 <outlet property="amp1Text" destination="KrV-Uc-sTC" id="3pK-Kb-R1I"/>
+                <outlet property="freq1Out" destination="C2o-5R-Xi9" id="egt-iO-BaE"/>
+                <outlet property="freq1Text" destination="OHq-k2-NVY" id="pwT-95-z6P"/>
                 <outlet property="phase1Out" destination="VtA-Jk-XGn" id="yqz-CS-8i7"/>
                 <outlet property="phase1Text" destination="4cp-J0-ulf" id="Ibq-RP-eHR"/>
                 <outlet property="phaseSliderOut" destination="VtA-Jk-XGn" id="NmH-FC-5Ll"/>
@@ -692,9 +694,9 @@
                             <subviews>
                                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C2o-5R-Xi9">
                                     <rect key="frame" x="189" y="96" width="201" height="21"/>
-                                    <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="100" maxValue="12000" doubleValue="359" tickMarkPosition="above" sliderType="linear" id="gWW-pA-SU6"/>
+                                    <sliderCell key="cell" continuous="YES" state="on" alignment="left" minValue="100" maxValue="12000" doubleValue="400" tickMarkPosition="above" sliderType="linear" id="gWW-pA-SU6"/>
                                     <connections>
-                                        <action selector="takeIntValueFrom:" target="OHq-k2-NVY" id="f8r-Zp-kVI"/>
+                                        <action selector="freq1Slider:" target="Voe-Tx-rLC" id="mil-U7-Nh4"/>
                                     </connections>
                                 </slider>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gbG-pF-JhW">
@@ -794,13 +796,13 @@
                                 </textField>
                                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OHq-k2-NVY">
                                     <rect key="frame" x="84" y="97" width="42" height="18"/>
-                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" continuous="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" title="100" drawsBackground="YES" id="uju-Sy-vhA">
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" continuous="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="right" title="400" drawsBackground="YES" id="uju-Sy-vhA">
                                         <font key="font" metaFont="system" size="10"/>
                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                     <connections>
-                                        <action selector="takeDoubleValueFrom:" target="C2o-5R-Xi9" id="Ila-gb-fCB"/>
+                                        <action selector="freq1TextSet:" target="Voe-Tx-rLC" id="mdl-Pp-q6n"/>
                                     </connections>
                                 </textField>
                                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5d1-al-rRl">

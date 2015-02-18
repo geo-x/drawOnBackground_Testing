@@ -30,7 +30,7 @@ public class SineWave{
     
     init(){
         wavAmplitude = 0.5
-        wavFrequency = 3000
+        wavFrequency = 400
         wavPhase = 0
         
         // load wavRawValue array with dummy values
@@ -113,15 +113,26 @@ public func calculateRawValues ()  {
 
 class WaveView1: NSView {
     
-    var timeScale:Double = 0.1 // x axis time scale in milliseconds
-
+    
+    
+  var timeScale:Double = 2.5 // x axis time scale in milliseconds ( in this case 1/4 cycle of 100 Hz)
+  
+  var scaleFactor:Double {
+      
+  return ((1/sineWave1.wavFrequency*1000)/self.timeScale)
+  
+   }
+  
+  var degreesDisplayed:Int {
+      return 360 * Int(1/self.scaleFactor)
    
-     
+   }
  
     
     func testFunction(){
         
-        println(" test function has been called by an instance of WaveView1")
+        println(" test function has been called by an instance of WaveView1 and the scaleFactor is \(self.scaleFactor)")
+        println(" and the number of degrees to display is \(self.degreesDisplayed)")
     }
     
     
@@ -129,21 +140,14 @@ class WaveView1: NSView {
     override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)
 
-        
-     
 
-        println("how many times?")
-        
-//**************************************************************************
-
-        
         
            var path = NSBezierPath()
 
        
           path.lineWidth = 1
        
-          var startPoint:NSPoint =  NSPoint(x:(Double(0 ) * 1) , y: Double(sineWave1.phaseAdjustedValueArray[0] * Double(100)) + Double(140))
+          var startPoint:NSPoint =  NSPoint(x:(Double(0 ) * self.scaleFactor) , y: Double(sineWave1.phaseAdjustedValueArray[0] * Double(100)) + Double(140))
         
         
       
@@ -151,20 +155,15 @@ class WaveView1: NSView {
         
             path.moveToPoint( startPoint )
         
-// *** draw points in array
+// *** draw points in array for first complete cycle
         
             for i in 0...360{
         
-                path.lineToPoint( NSPoint(x:(Double(i ) * 1 ) , y: Double(sineWave1.phaseAdjustedValueArray[i] * Double(100)) + Double(140)))
+                path.lineToPoint( NSPoint(x:(Double(i ) * self.scaleFactor ) , y: Double(sineWave1.phaseAdjustedValueArray[i] * Double(100)) + Double(140)))
                 
                 
                 path.stroke()
         
-                //path.lineToPoint( NSPoint(x:Int((Double(i ) * 0.5 )) , y: Int(Double(sineWave1.wavRawValueArray[i] * Double(100)) + Double(140))))
-                                
-                
-                                
-                
 
                           } // end for
             
