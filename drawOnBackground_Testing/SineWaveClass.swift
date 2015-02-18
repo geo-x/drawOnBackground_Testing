@@ -58,7 +58,7 @@ public func calculateRawValues ()  {
             
             }
         
-        println("  here's the raw value array ( self.wavRawValueArray)")
+      
       self.adjustValuesForPhase()
     }
     
@@ -89,7 +89,7 @@ public func calculateRawValues ()  {
 
         }
   
-        println("  now got here")
+  
     }
     
     // NOTE  when a wave is 30 degrees out of phase, it is delayed by 30 degrees.. so now 330 aligns to zero degrees on the reference wave
@@ -124,7 +124,7 @@ class WaveView1: NSView {
    }
   
   var degreesDisplayed:Int {
-      return 360 * Int(1/self.scaleFactor)
+      return Int(360 * 1/self.scaleFactor)
    
    }
  
@@ -139,7 +139,11 @@ class WaveView1: NSView {
     
     override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)
-
+        
+        
+        
+        println(" test function has been called by an instance of WaveView1 and the scaleFactor is \(self.scaleFactor)")
+        println(" and the number of degrees to display is \(self.degreesDisplayed)")
 
         
            var path = NSBezierPath()

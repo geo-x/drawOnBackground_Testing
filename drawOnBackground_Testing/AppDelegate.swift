@@ -153,9 +153,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         
         
-         println("main loop how many times?")
-        
-        DrawingWav1.testFunction()
+                
+       
         
    DrawingWav1.needsDisplay = true
         
