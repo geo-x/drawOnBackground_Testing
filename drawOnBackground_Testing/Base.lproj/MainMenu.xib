@@ -14,6 +14,8 @@
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="drawOnBackground_Testing" customModuleProvider="target">
             <connections>
                 <outlet property="DrawingWav1" destination="ELS-ZP-Hhr" id="juV-Vy-RdT"/>
+                <outlet property="amp1Out" destination="5d1-al-rRl" id="55O-5q-MA6"/>
+                <outlet property="amp1Text" destination="KrV-Uc-sTC" id="3pK-Kb-R1I"/>
                 <outlet property="phase1Out" destination="VtA-Jk-XGn" id="yqz-CS-8i7"/>
                 <outlet property="phase1Text" destination="4cp-J0-ulf" id="Ibq-RP-eHR"/>
                 <outlet property="phaseSliderOut" destination="VtA-Jk-XGn" id="NmH-FC-5Ll"/>
@@ -812,7 +814,7 @@
                                     <rect key="frame" x="189" y="65" width="201" height="21"/>
                                     <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" doubleValue="0.5" tickMarkPosition="above" sliderType="linear" id="5Fc-dS-oSB"/>
                                     <connections>
-                                        <action selector="takeFloatValueFrom:" target="KrV-Uc-sTC" id="h6f-pl-FYc"/>
+                                        <action selector="amp1Slider:" target="Voe-Tx-rLC" id="4uS-yH-WiJ"/>
                                     </connections>
                                 </slider>
                                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4cp-J0-ulf">
@@ -838,7 +840,7 @@
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                     <connections>
-                                        <action selector="takeDoubleValueFrom:" target="5d1-al-rRl" id="d3u-is-UGb"/>
+                                        <action selector="amp1TextSet:" target="Voe-Tx-rLC" id="I1n-hR-j2G"/>
                                     </connections>
                                 </textField>
                             </subviews>

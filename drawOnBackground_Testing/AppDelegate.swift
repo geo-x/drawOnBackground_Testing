@@ -35,16 +35,35 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var DrawingWav1: WaveView1!
     
+    
+    //******* Actions and Outlets  *******
+    //***********************************
+    //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
    
     //***********************************
     // textField Actions ****************
+    
+    
+    
+    
+    
+    
+    @IBAction func amp1TextSet(sender: NSTextField) {
+        
+        sineWave1.wavAmplitude = sender.doubleValue
+        amp1Out.doubleValue = sender.doubleValue //update slider outlet
+        sineWave1.calculateRawValues()
+        DrawingWav1.needsDisplay = true
+
+    }
+    
     
     
     @IBAction func Phase1TextSet(sender: NSTextField) {
         
         println("phase set from text")
         sineWave1.wavPhase = Int(sender.doubleValue)
-        phase1Out.doubleValue = sender.doubleValue
+        phase1Out.doubleValue = sender.doubleValue //update slider outlet
          sineWave1.calculateRawValues()
         DrawingWav1.needsDisplay = true
 
@@ -55,13 +74,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // textField Outlets ******************
     
     
+    @IBOutlet weak var amp1Text: NSTextField!
     @IBOutlet weak var phase1Text: NSTextField!
     
-   //******* Actions and Outlets  *******
-    //***********************************
-    //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+    
+    
     //***********************************
     // slider actions **************
+    
+   
+    
+
+    
+    @IBAction func amp1Slider(sender: NSSlider) {
+        
+        sineWave1.wavAmplitude = sender.doubleValue
+        sineWave1.calculateRawValues()
+        amp1Text.floatValue = Float(sender.doubleValue)
+        DrawingWav1.needsDisplay = true
+        
+    }
+ //__________________________________________________
     
     @IBAction func phase1Slider(sender: NSSlider) {
         
@@ -76,6 +110,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // slider Outlets **************
 
     
+    @IBOutlet weak var amp1Out: NSSlider!
     @IBOutlet weak var phase1Out: NSSlider!
     
     
