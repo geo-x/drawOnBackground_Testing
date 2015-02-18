@@ -678,21 +678,14 @@
         <window title="drawOnBackground_Testing" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="469" height="511"/>
+            <rect key="contentRect" x="335" y="390" width="470" height="531"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1177"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="469" height="511"/>
+                <rect key="frame" x="0.0" y="0.0" width="470" height="531"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5z6-Gx-YYc">
-                        <rect key="frame" x="20" y="195" width="424" height="291"/>
-                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="geo graph paper 414x417" id="gMb-ib-KaY"/>
-                    </imageView>
-                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ELS-ZP-Hhr" customClass="WaveView1" customModule="drawOnBackground_Testing" customModuleProvider="target">
-                        <rect key="frame" x="92" y="205" width="281" height="281"/>
-                    </customView>
                     <box autoresizesSubviews="NO" fixedFrame="YES" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="mFX-hj-mUS">
-                        <rect key="frame" x="28" y="16" width="408" height="175"/>
+                        <rect key="frame" x="28" y="22" width="408" height="175"/>
                         <view key="contentView">
                             <rect key="frame" x="1" y="1" width="406" height="159"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -848,9 +841,16 @@
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </box>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5z6-Gx-YYc">
+                        <rect key="frame" x="47" y="214" width="371" height="291"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="geo graph paper 414x417" id="gMb-ib-KaY"/>
+                    </imageView>
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ELS-ZP-Hhr" customClass="WaveView1" customModule="drawOnBackground_Testing" customModuleProvider="target">
+                        <rect key="frame" x="51" y="218" width="360" height="281"/>
+                    </customView>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="334.5" y="526.5"/>
+            <point key="canvasLocation" x="335" y="536.5"/>
         </window>
         <userDefaultsController representsSharedInstance="YES" id="w8M-bz-UlN"/>
     </objects>

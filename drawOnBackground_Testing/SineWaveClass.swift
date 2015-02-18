@@ -113,7 +113,7 @@ public func calculateRawValues ()  {
 
 class WaveView1: NSView {
     
-   
+    var timeScale:Double = 0.1 // x axis time scale in milliseconds
 
    
      
@@ -143,7 +143,7 @@ class WaveView1: NSView {
        
           path.lineWidth = 1
        
-          var startPoint:NSPoint =  NSPoint(x:(Double(0 ) * 0.15) , y: Double(sineWave1.phaseAdjustedValueArray[0] * Double(100)) + Double(140))
+          var startPoint:NSPoint =  NSPoint(x:(Double(0 ) * 1) , y: Double(sineWave1.phaseAdjustedValueArray[0] * Double(100)) + Double(140))
         
         
       
@@ -155,7 +155,7 @@ class WaveView1: NSView {
         
             for i in 0...360{
         
-                path.lineToPoint( NSPoint(x:(Double(i ) * 0.15 ) , y: Double(sineWave1.phaseAdjustedValueArray[i] * Double(100)) + Double(140)))
+                path.lineToPoint( NSPoint(x:(Double(i ) * 1 ) , y: Double(sineWave1.phaseAdjustedValueArray[i] * Double(100)) + Double(140)))
                 
                 
                 path.stroke()
