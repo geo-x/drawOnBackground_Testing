@@ -115,62 +115,77 @@ class WaveView1: NSView {
     
     
     
-  var timeScale:Double = 2.5 // x axis time scale in milliseconds ( in this case 1/4 cycle of 100 Hz)
-  
-  var scaleFactor:Double {
-      
-  return ((1/sineWave1.wavFrequency*1000)/self.timeScale)
-  
-   }
-  
-  var degreesDisplayed:Int {
-      return Int(360 * 1/self.scaleFactor)
-   
-   }
- 
+    var timeScale:Double = 2.5 // x axis time scale in milliseconds ( in this case 1/4 cycle of 100 Hz)
     
-    func testFunction(){
+    var scaleFactor:Double {
         
-        println(" test function has been called by an instance of WaveView1 and the scaleFactor is \(self.scaleFactor)")
-        println(" and the number of degrees to display is \(self.degreesDisplayed)")
+        return ((1/sineWave1.wavFrequency*1000)/self.timeScale)
+        
+    }
+    
+  
+    
+    
+    var degreesToFillDisplay:Int {
+        return Int(360 * timeScale / (1 / sineWave1.wavFrequency * 1000))
+    }
+    
+    
+    var completeCyclesDisplayed:Int {
+        return Int(degreesToFillDisplay / 360)
     }
     
     
     
+    func testFunction(){
+        
+        //println(" test function has been called by an instance of WaveView1 and the scaleFactor is \(self.scaleFactor)")
+        //println(" and the number of degrees to display is \( degreesToFillDisplay) and the number of complete cycles is \(completeCyclesDisplayed) ")
+    }
+    
+ //*********************************************************************
     override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)
         
         
-        
-        println(" test function has been called by an instance of WaveView1 and the scaleFactor is \(self.scaleFactor)")
-        println(" and the number of degrees to display is \(self.degreesDisplayed)")
-
-        
-           var path = NSBezierPath()
-
-       
-          path.lineWidth = 1
-       
-          var startPoint:NSPoint =  NSPoint(x:(Double(0 ) * self.scaleFactor) , y: Double(sineWave1.phaseAdjustedValueArray[0] * Double(100)) + Double(140))
+        //println(" test function has been called by an instance of WaveView1 and the scaleFactor is \(self.scaleFactor)")
+        //println(" and the number of degrees to display is  \( degreesToFillDisplay) and the number of complete cycles is \(completeCyclesDisplayed)")
         
         
+        var path = NSBezierPath()
       
-// *** initialize start point
         
-            path.moveToPoint( startPoint )
+        path.lineWidth = 1
         
-// *** draw points in array for first complete cycle
+        var startPoint:NSPoint =  NSPoint(x:(Double(0 ) * self.scaleFactor) , y: Double(sineWave1.phaseAdjustedValueArray[0] * Double(100)) + Double(140))
         
-            for i in 0...360{
+        var lastPoint:NSPoint = startPoint
         
-                path.lineToPoint( NSPoint(x:(Double(i ) * self.scaleFactor ) , y: Double(sineWave1.phaseAdjustedValueArray[i] * Double(100)) + Double(140)))
-                
-                
-                path.stroke()
         
-
-                          } // end for
+        
+        // *** initialize start point
+        
+        path.moveToPoint( startPoint )
+        
+        // *** draw points in array for first complete cycle
+        
+        
+        for j in 0...completeCyclesDisplayed{
+        
+        for i in 0...360{
             
+            path.lineToPoint( NSPoint(x:(Double(i ) * self.scaleFactor + self.scaleFactor * 360 * Double(j) ) , y: Double(sineWave1.phaseAdjustedValueArray[i] * Double(100)) + Double(140)))
+            
+            
+            path.stroke()
+            
+            
+        } // end for degrees loop
+        
+        
+        
+        } //cycles loop
+        
     } //end drawrect
     
 } //end class
