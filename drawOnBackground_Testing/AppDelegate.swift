@@ -45,6 +45,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     
     @IBAction func freq1TextSet(sender: NSTextField) {
+
+    //println("slider text action")
         sineWave1.wavFrequency = sender.doubleValue
         freq1Out.doubleValue = sender.doubleValue //update slider outlet
         sineWave1.calculateRawValues()
@@ -67,7 +69,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBAction func Phase1TextSet(sender: NSTextField) {
         
-        println("phase set from text")
+        //println("phase set from text")
         sineWave1.wavPhase = Int(sender.doubleValue)
         phase1Out.doubleValue = sender.doubleValue //update slider outlet
          sineWave1.calculateRawValues()
@@ -92,7 +94,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
    
     @IBAction func freq1Slider(sender: NSSlider) {
-        
+        //println("slider action")
         sineWave1.wavFrequency = sender.doubleValue
         sineWave1.calculateRawValues()
         freq1Text.integerValue = Int(sender.doubleValue)

@@ -182,7 +182,7 @@ class WaveView1: NSView {
             
         } // end for degrees loop
         
-        
+        //println (" loop number \(j)")
         
         } //cycles loop
         
