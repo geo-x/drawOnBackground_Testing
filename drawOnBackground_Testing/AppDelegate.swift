@@ -47,7 +47,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func freq1TextSet(sender: NSTextField) {
 
     //println("slider text action")
-        sineWave1.wavFrequency = sender.doubleValue
+        sineWave1.wavFrequency = Float(sender.doubleValue)
         freq1Out.doubleValue = sender.doubleValue //update slider outlet
         sineWave1.calculateRawValues()
         DrawingWav1.needsDisplay = true
@@ -58,7 +58,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBAction func amp1TextSet(sender: NSTextField) {
         
-        sineWave1.wavAmplitude = sender.doubleValue
+        sineWave1.wavAmplitude = Float(sender.doubleValue)
         amp1Out.doubleValue = sender.doubleValue //update slider outlet
         sineWave1.calculateRawValues()
         DrawingWav1.needsDisplay = true
@@ -95,7 +95,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
    
     @IBAction func freq1Slider(sender: NSSlider) {
         //println("slider action")
-        sineWave1.wavFrequency = sender.doubleValue
+        sineWave1.wavFrequency = Float(sender.doubleValue)
         sineWave1.calculateRawValues()
         freq1Text.integerValue = Int(sender.doubleValue)
         DrawingWav1.needsDisplay = true
@@ -107,7 +107,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBAction func amp1Slider(sender: NSSlider) {
         
-        sineWave1.wavAmplitude = sender.doubleValue
+        sineWave1.wavAmplitude = Float(sender.doubleValue)
         sineWave1.calculateRawValues()
         amp1Text.floatValue = Float(sender.doubleValue)
         DrawingWav1.needsDisplay = true

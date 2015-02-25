@@ -13,14 +13,14 @@ public class SineWave{
 
     //Properties **************************
     
-    var wavAmplitude:Double
-    public var wavFrequency:Double
+    var wavAmplitude:Float
+    public var wavFrequency:Float
     var wavPhase:Int
     
     // create empty arrays using initializer syntax
     
-    var wavRawValueArray = [Double]()
-    public var phaseAdjustedValueArray = [Double]()
+    var wavRawValueArray = [Float]()
+    public var phaseAdjustedValueArray = [Float]()
     
     
    
@@ -47,11 +47,11 @@ public class SineWave{
 public func calculateRawValues ()  {
      
    
-      var instantaneousAmpValue :Double
+      var instantaneousAmpValue :Float
         
         for i in 0...360 {
-            var degreeCount:Double = Double(i)
-            instantaneousAmpValue = Double(sin(degreeCount * pi / 180))
+            var degreeCount:Int = i
+            instantaneousAmpValue = Float(sin(Float(degreeCount) * Float(pi) / Float(180)))
             instantaneousAmpValue = instantaneousAmpValue * self.wavAmplitude
             
             self.wavRawValueArray[i] = instantaneousAmpValue
@@ -113,15 +113,17 @@ public func calculateRawValues ()  {
 
 class WaveView1: NSView {
     
+    var verticalScale: Int = 100
+    
+    var timeScale:Float = 2.5 // x axis time scale in milliseconds ( in this case 1/4 cycle of 100 Hz)
     
     
-    var timeScale:Double = 2.5 // x axis time scale in milliseconds ( in this case 1/4 cycle of 100 Hz)
-    
-    var scaleFactor:Double {
+    var scaleFactor:Float {
         
         return ((1/sineWave1.wavFrequency*1000)/self.timeScale)
         
     }
+    
     
   
     
@@ -146,7 +148,7 @@ class WaveView1: NSView {
  //*********************************************************************
     override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)
-        
+    
         
         //println(" test function has been called by an instance of WaveView1 and the scaleFactor is \(self.scaleFactor)")
         //println(" and the number of degrees to display is  \( degreesToFillDisplay) and the number of complete cycles is \(completeCyclesDisplayed)")
@@ -157,9 +159,23 @@ class WaveView1: NSView {
         
         path.lineWidth = 1
         
-        var startPoint:NSPoint =  NSPoint(x:(Double(0 ) * self.scaleFactor) , y: Double(sineWave1.phaseAdjustedValueArray[0] * Double(100)) + Double(140))
+        //var startPoint: NSPoint =  NSPoint(x:(Float(0 ) * Float(self.scaleFactor)) , y: Float(sineWave1.phaseAdjustedValueArray[0]) * Float(verticalScale) + Float(140))
         
-        var lastPoint:NSPoint = startPoint
+    var startPointX: CGFloat {
+        return (CGFloat(0) * CGFloat(self.scaleFactor))
+        
+          }
+        
+        var startPointY:CGFloat {
+            
+            return ( CGFloat(sineWave1.phaseAdjustedValueArray[0]) * CGFloat(verticalScale) + CGFloat(140))
+        }
+        
+  
+        
+    var startPoint: NSPoint =  NSPoint( x: startPointX , y: startPointY)
+        
+       var lastPoint:NSPoint = startPoint
         
         
         
@@ -174,15 +190,26 @@ class WaveView1: NSView {
         
         for i in 0...360{
             
-            path.lineToPoint( NSPoint(x:(Double(i ) * self.scaleFactor + self.scaleFactor * 360 * Double(j) ) , y: Double(sineWave1.phaseAdjustedValueArray[i] * Double(100)) + Double(140)))
+            var nextPointX: CGFloat {
+                
+                return (CGFloat(i) * CGFloat(self.scaleFactor) + CGFloat(self.scaleFactor) * CGFloat(360) * CGFloat(j) )
+            }
             
+            var nextPointY: CGFloat {
+                
+                return ( CGFloat((sineWave1.phaseAdjustedValueArray[i] * 100) + 140))
+            }
             
+           
+           
+           path.lineToPoint( NSPoint(x: nextPointX, y: nextPointY))
+           
             path.stroke()
             
             
         } // end for degrees loop
         
-        //println (" loop number \(j)")
+       
         
         } //cycles loop
         
